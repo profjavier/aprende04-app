@@ -1,0 +1,45 @@
+<form [formGroup]="formGroup" (ngSubmit)="add()">
+    <div class="row">
+      <div class="form-group col-2">
+        <label class="form-label">Referencia:</label>
+        <input name="ref" type="text" class="form-control"
+        formControlName="ref">
+        <!--<span *ngIf="this.formGroup.get('ref')?.errors?.['required']">
+          (La referencia no puede estar vacia)
+        </span>
+              <span *ngIf="this.formGroup.get('ref')?.errors?.['minlength'] || this.formGroup.get('ref')?.errors?.['maxlength']">
+          (Debe tener entre 4 y 10 caracteres)
+        </span>
+      -->
+        <span class="form-text text-danger" *ngIf="validado('ref')">
+          (La referencia no puede estar vacia)
+        </span>
+      </div>
+      <div class="form-group col-2">
+        <label class="form-label">Descripción:</label>
+        <input name="descripcion" type="text" class="form-control"
+        formControlName="descripcion">
+      </div>
+      <div class="form-group col-2">
+        <label class="form-label">Precio:</label>
+        <input name="precio" type="text" class="form-control"
+        formControlName="precio">
+      </div>
+      <div class="form-group col-2">
+        <label class="form-label">Iva:</label>
+        <input name="iva" type="text" class="form-control"
+        formControlName="iva">
+      </div>
+      <div class="form-group col-2">
+        <label class="form-label">Stock:</label>
+        <input name="stock" type="text" class="form-control"
+        formControlName="stock">
+      </div>
+      <div class="align-self-end col-2">
+        <button class="btn btn-primary" type="submit">Añadir</button>
+      </div>
+  
+    </div>
+  
+  </form>
+  

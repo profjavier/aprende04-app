@@ -1,0 +1,26 @@
+<table class="table table-warning table-striped" *ngIf="articulos.length!=0">
+    <thead>
+      <th>#</th>
+      <th>Ref</th>
+      <th>Descripción</th>
+      <th>Precio</th>
+      <th>Iva</th>
+      <th>Stock</th>
+      <th></th>
+  
+    </thead>
+    <tbody>
+      <tr *ngFor="let articulo of articulos; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{articulo.ref}}</td>
+        <td>{{articulo.descripcion}}</td>
+        <td>{{articulo.precio | number}}</td>
+        <td>{{articulo.iva | percent}}</td>
+        <td>{{articulo.stock | number}}</td>
+        <td><button (click)="borraFila(articulo.id)" class="btn btn-danger"> Borra</button></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <p *ngIf="articulos.length==0" class="alert alert-warning">No hay articulos en la BD</p>
+  
